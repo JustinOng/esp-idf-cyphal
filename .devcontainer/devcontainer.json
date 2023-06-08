@@ -1,0 +1,26 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.234.0/containers/alpine
+{
+	"name": "ESP-IDF Release 4.4",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	
+  "runArgs": [ "--privileged"],
+	"settings": {},
+
+	"mounts": [
+    "source=esp-idf-env-extensions,target=/root/.vscode-server/extensions,type=volume",
+    "source=/dev,target=/dev,type=bind"
+  ],
+
+  "remoteUser": "idf",
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-vscode.cpptools",
+		"donjayamanne.githistory",
+		"twxs.cmake",
+		"ms-vscode.cpptools-extension-pack"
+	],
+}

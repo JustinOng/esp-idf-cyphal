@@ -1,0 +1,3 @@
+[submodule "lib/107-Arduino-Cyphal"]
+	path = lib/107-Arduino-Cyphal
+	url = git@github.com:JustinOng/107-Arduino-Cyphal.git
