@@ -1,0 +1,9 @@
+menu "Cyphal"
+  config CYPHAL_TASK_PRIORITY
+    int "Cyphal Task Priority"
+    default 10
+    range 0 24
+  config CYPHAL_TASK_STACK_SIZE
+    int "Cyphal Task Stack Size"
+    default 16384
+endmenu

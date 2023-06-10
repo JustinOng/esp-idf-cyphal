@@ -14,7 +14,7 @@ class IDFNode : public NodeBase {
 
   IDFNode(uint8_t *heap_ptr, size_t const heap_size, MicrosFunc const micros_func, CanFrameTxFunc const tx_func, CanardNodeID const node_id = DEFAULT_NODE_ID, size_t const tx_queue_capacity = DEFAULT_TX_QUEUE_SIZE, size_t const mtu_bytes = DEFAULT_MTU_SIZE)
       : NodeBase(micros_func, tx_func, node_id, tx_queue_capacity, mtu_bytes), _o1heap_ins{o1heapInit(heap_ptr, heap_size)} {}
-  void initialize(UBaseType_t tx_task_priority = 10);
+  void initialize();
 
   static void txTask(void *arg) {
     IDFNode *node = static_cast<IDFNode *>(arg);

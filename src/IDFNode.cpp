@@ -1,12 +1,13 @@
 #include "IDFNode.hpp"
 
 #include "esp_timer.h"
+#include "sdkconfig.h"
 
-void IDFNode::initialize(UBaseType_t tx_task_priority) {
+void IDFNode::initialize() {
   _mutex_tx = xSemaphoreCreateMutex();
   _mutex_o1heap = xSemaphoreCreateMutex();
 
-  xTaskCreate(txTask, "cyphal_tx", 16384, this, tx_task_priority, &_tx_task);
+  xTaskCreate(txTask, "cyphal_tx", CONFIG_CYPHAL_TASK_STACK_SIZE, this, CONFIG_CYPHAL_TASK_PRIORITY, &_tx_task);
 }
 
 bool IDFNode::enqueue_transfer(CanardMicrosecond const tx_timeout_usec,
