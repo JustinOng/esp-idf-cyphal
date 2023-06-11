@@ -6,4 +6,9 @@ menu "Cyphal"
   config CYPHAL_TASK_STACK_SIZE
     int "Cyphal Task Stack Size"
     default 16384
+  config CYPHAL_NVSKVSTORE_INIT_NVS
+    bool "Initialize NVS in KeyValueStore"
+    default y
+    help
+      Whether to initialize NVS when initializing NVS KeyValueStore
 endmenu
