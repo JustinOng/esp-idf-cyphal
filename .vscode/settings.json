@@ -1,0 +1,3 @@
+{
+  "C_Cpp.clang_format_fallbackStyle": "{ Language: Cpp, BasedOnStyle: Google, IndentWidth: 2, PointerAlignment: Right,ColumnLimit: 0, SpacesInContainerLiterals: true }",
+}
