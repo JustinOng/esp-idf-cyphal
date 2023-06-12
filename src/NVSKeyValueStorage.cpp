@@ -30,7 +30,7 @@ esp_err_t KeyValueStorage::initialize(const char* partition_name) {
 
 void KeyValueStorage::hash(const std::string_view key, char out[LEN_NVS_KEY]) {
   uint64_t h = registry::detail::CRC64WE(key.begin(), key.end()).get();
-  memcpy(out, (void*)&h, sizeof(h));
+  memcpy(out, &h, sizeof(h));
   out[sizeof(h)] = '\0';
 }
 
