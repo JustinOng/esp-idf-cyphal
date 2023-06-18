@@ -36,4 +36,5 @@ void app_main() {
 
 # Usage Examples
 - [examples/basic](https://github.com/JustinOng/esp-idf-cyphal/blob/master/examples/basic/main/main.cpp)
+- [examples/distance-sensor](https://github.com/JustinOng/esp-idf-cyphal/blob/master/examples/distance-sensor/main/main.cpp): Distance sensor with a VL53L0X
 - [107-Arduino-Cyphal#examples](https://github.com/107-systems/107-Arduino-Cyphal#examples)
