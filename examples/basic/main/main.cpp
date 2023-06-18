@@ -22,8 +22,8 @@ KeyValueStorage kvstore;
 static uint16_t node_id = 10;
 
 const auto node_registry = node.create_registry();
-const auto reg_ro_cyphal_node_description = node_registry->route("cyphal.node.description", {true}, []() { return "basic-cyphal-node"; });
-const auto reg_rw_cyphal_node_id = node_registry->expose("cyphal.node.id", {true}, node_id);
+const auto reg_ro_node_description = node_registry->route("uavcan.node.description", {true}, []() { return "basic-cyphal-node"; });
+const auto reg_rw_node_id = node_registry->expose("uavcan.node.id", {true}, node_id);
 
 Publisher<uavcan::node::Heartbeat_1_0>
     heartbeat_pub = node.create_publisher<uavcan::node::Heartbeat_1_0>(1 * 1000 * 1000UL /* = 1 sec in usecs. */);
